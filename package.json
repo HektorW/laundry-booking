@@ -1,0 +1,27 @@
+{
+  "name": "laundry-booking",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:HektorW/laundry-booking",
+  "author": "Hektor Wallin <hektorw@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=7.8.0"
+  },
+  "scripts": {
+    "start:dev": "NODE_ENV=development nodemon --inspect=7000 index.js | bunyan -o short"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.1",
+    "eslint": "^3.19.0",
+    "eslint-plugin-node": "^4.2.2",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "bunyan": "^1.8.9",
+    "cheerio": "^0.22.0",
+    "koa": "^2.2.0",
+    "node-fetch": "^1.6.3",
+    "url-join": "^1.1.0"
+  }
+}
