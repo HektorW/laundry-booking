@@ -1,5 +1,5 @@
 const fetch = require('node-fetch')
-const { baseUrl } = require('../config')
+const { baseUrl } = require('../../config')
 
 
 module.exports = async function fetchSiteHtml (form = null) {

@@ -7,7 +7,7 @@ module.exports = {
   "plugins": ["node"],
   "extends": ["eslint:recommended", "plugin:node/recommended"],
     "rules": {
-    "indent": ["error", 2],
+    "indent": ["error", 2, { "SwitchCase": 1 }],
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
     "semi": ["error", "never"],

@@ -1,7 +1,6 @@
 const createSession = require('./createSession')
 const fetchSiteHtml = require('./fetchSiteHtml')
 const getForm = require('./getForm')
-const scrapeSessionValues = require('./scrapeSessionValues')
 
 
 module.exports = async function signIn (username, password) {
@@ -13,8 +12,6 @@ module.exports = async function signIn (username, password) {
   form.append('tbPassword', password)
   form.append('btOK', '') // Value not important but needs to exist
 
-  const authHtml = await fetchSiteHtml(form)
-  const authSession = scrapeSessionValues(authHtml)
-  
-  return authSession
+  const startPageHtml = await fetchSiteHtml(form)
+  return startPageHtml
 }

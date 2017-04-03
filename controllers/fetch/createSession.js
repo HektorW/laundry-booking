@@ -1,5 +1,5 @@
 const fetchSiteHtml = require('./fetchSiteHtml')
-const scrapeSessionValues = require('./scrapeSessionValues')
+const scrapeSessionValues = require('../scrape/scrapeSessionValues')
 
 
 module.exports = async function createSession () {

@@ -24,6 +24,7 @@
     "dotenv": "^4.0.0",
     "form-data": "^2.1.2",
     "koa": "^2.2.0",
+    "koa-bodyparser": "^4.2.0",
     "koa-router": "next",
     "node-fetch": "^1.6.3"
   }
