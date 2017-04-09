@@ -21,7 +21,7 @@ module.exports = async function availableAtDate (requestBody) {
   const formattedDay = formatDay(date)
 
   if (availableAsArray.length === 0) {
-    return { speech: `There are no available times available ${formattedDay}.` }
+    return { speech: `There are no available times ${formattedDay}.` }
   }
 
   const formattedLaundryTimes = formatLaundryTimeList(availableAsArray)
@@ -32,7 +32,7 @@ module.exports = async function availableAtDate (requestBody) {
 
   const responses = [
     { speech: `There are available times at ${formattedLaundryTimes} ${formattedDay}.` },
-    { speech: `These are the available times ${formattedDay}. ${formattedLaundryTimes} ${formattedDay}.` },
+    { speech: `These are the available times ${formattedDay}. ${formattedLaundryTimes}.` },
   ]
 
   return randItem(responses)
