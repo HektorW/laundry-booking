@@ -1,3 +1,4 @@
 module.exports = {
-  'get-booked': require('./getBooked'), 
+  'get-available-at-date': require('./getAvailableAtDate'),
+  'get-booked': require('./getBooked'),
 }
