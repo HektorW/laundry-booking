@@ -1,5 +1,5 @@
-const getBookedDatetime = require('../../../controllers/getBookedDatetime')
-const dayString = require('../../../controllers/dateformat/dayString')
+const getBookedDatetime = require('../../../../controllers/getBookedDatetime')
+const dayString = require('../../../../controllers/dateformat/dayString')
 
 
 module.exports = async function getBookedIntent () {

@@ -1,5 +1,5 @@
 const intents = require('./intents')
-const log = require('../../log')(__filename)
+const log = require('../../../log')(__filename)
 
 
 module.exports = async function apiAiHandler (ctx) {
