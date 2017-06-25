@@ -1,0 +1,16 @@
+{
+  "presets": [
+    ["env",  {
+      "targets": {
+        "chrome": 58
+      },
+      "modules": false
+    }]
+  ],
+  "plugins": [
+    ["transform-react-jsx", {
+      "pragma": "h",
+      "useBuiltIns": true
+    }]
+  ]
+}
