@@ -6,7 +6,7 @@ module.exports = {
   },
   "plugins": ["node"],
   "extends": ["eslint:recommended", "plugin:node/recommended"],
-    "rules": {
+  "rules": {
     "indent": ["error", 2, { "SwitchCase": 1 }],
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
@@ -14,5 +14,6 @@ module.exports = {
     "generator-star-spacing": ["error", "after"],
     "comma-dangle": ["error", "always-multiline"],
     "require-yield": 0,
+    "prefer-const": "error",
   }
 };
