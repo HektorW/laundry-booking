@@ -24,7 +24,11 @@ module.exports = {
     'import/resolver': 'webpack',
   },
   rules: {
-    'node/no-unsupported-features': 0,
     'import/no-unresolved': 'error',
+    'node/no-unsupported-features': 0,
+    'react/prop-types': 0,
+  },
+  globals: {
+    process: false,
   },
 }

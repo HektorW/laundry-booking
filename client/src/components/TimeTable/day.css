@@ -1,0 +1,12 @@
+.day__list {
+  display: flex;
+  height: 100px;
+}
+
+.day--fully-booked .day__list {
+  height: 25px;
+}
+
+.day__list-item {
+  flex: 1;
+}

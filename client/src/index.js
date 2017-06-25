@@ -1,9 +1,21 @@
+/* globals require:false, module:false */
 import { h, render } from 'preact'
-import App from 'components/App'
+import createStore from 'store'
 
-const root = document.querySelector('#root')
+let root
+const store = createStore()
+store.dispatch(require('./actions/timeTable').setDebugDays())
 
-render(
-  <App />,
-  root
-)
+const init = () => {
+  const App = require('./components/App').default
+
+  root = render(
+    <App store={store} />,
+    document.body,
+    root
+  )
+}
+
+init()
+
+if (module.hot) module.hot.accept('./components/App', init)

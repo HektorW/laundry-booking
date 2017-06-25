@@ -2,6 +2,7 @@
 
 const { join } = require('path')
 /* eslint-disable node/no-unpublished-require */
+const { EnvironmentPlugin } = require('webpack')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 /* eslint-enable */
 
@@ -33,10 +34,17 @@ module.exports = {
       test: /\.js$/,
       exclude: /node_modules/,
       use: 'babel-loader',
+    }, {
+      test: /\.css$/,
+      use: [
+        'style-loader',
+        'css-loader',
+      ],
     }],
   },
 
   plugins: [
+    new EnvironmentPlugin(['NODE_ENV']),
     new HTMLWebpackPlugin({
       template: join(__dirname, 'public/index.html'),
       inject: 'true',

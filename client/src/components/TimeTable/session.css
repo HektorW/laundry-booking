@@ -1,0 +1,14 @@
+.session {
+  background-color: transparent;
+  border: 1px solid;
+  height: 100%;
+  width: 100%;
+}
+
+.session--booked {
+  background-color: rgba(255, 0, 0, .5);
+}
+
+.session--mine {
+  background-color: rgba(0, 255, 0, .5);
+}

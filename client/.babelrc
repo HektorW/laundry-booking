@@ -4,12 +4,16 @@
       "targets": {
         "chrome": 58
       },
-      "modules": false
+      "modules": false,
+      "useBuiltIns": true
     }]
   ],
   "plugins": [
     ["transform-react-jsx", {
       "pragma": "h",
+      "useBuiltIns": true
+    }],
+    ["transform-object-rest-spread", {
       "useBuiltIns": true
     }]
   ]
