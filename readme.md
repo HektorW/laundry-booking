@@ -54,3 +54,23 @@ Example phrases to cancel a booked time
 
 * Cancel our booked time
 * Remove our booking
+
+
+
+
+
+
+# Is time+date available
+* Is it free tomorrow at 10?
+
+# Is there anything at date
+* Is there anything available tomorrow?
+
+# When is the first available
+* When is the first available time?
+
+# When is first time at date
+* When is the first available time on thursday?
+
+# When is first available day at time
+* When is the first available time at 7?
