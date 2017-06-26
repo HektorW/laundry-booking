@@ -9,5 +9,5 @@
 }
 
 .time-table__list-item:not(:last-child) {
-  margin: 0 0 1em 0;
+  margin: 0 0 1em;
 }
