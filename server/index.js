@@ -1,11 +1,11 @@
 const Koa = require('koa')
-const bodyParser = require('koa-bodyparser')
 const api = require('./api')
+const logRequest = require('./middleware/logRequest')
 
 
 const app = new Koa()
 
-app.use(bodyParser())
+app.use(logRequest)
 
 app.use(api.routes())
 app.use(api.allowedMethods())
