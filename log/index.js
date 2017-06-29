@@ -17,5 +17,5 @@ function parseName(name) {
 
 module.exports = function createApplicationLogger(name) {
   name = parseName(name)
-  return createLogger({ name, level: 'debug' })
+  return createLogger({ name, level: 'trace' })
 }
