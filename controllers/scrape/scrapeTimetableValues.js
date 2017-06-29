@@ -8,7 +8,7 @@ module.exports = function scrapeTimetableValues (html) {
   const $ = cheerio.load(html)
 
   const month = $('#lbCalendarDatum').text()
-  const startDay = $('#lbCalendarDag0').text().replace(/\D+/, '')
+  const startDay = parseInt($('#lbCalendarDag0').text().replace(/\D+/, ''), 10)
 
   const $table = $($('#pnCalendar table').get(1))
 
@@ -23,6 +23,10 @@ module.exports = function scrapeTimetableValues (html) {
   ]
 
   const startDate = new Date()
+  startDate.setUTCHours(0)
+  startDate.setMinutes(0)
+  startDate.setSeconds(0)
+  startDate.setMilliseconds(0)
   startDate.setMonth(MonthsTranslations[month])
   startDate.setDate(startDay)
 

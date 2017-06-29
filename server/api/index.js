@@ -1,9 +1,14 @@
 const Router = require('koa-router')
+// const apiAiRouter = require('./api.ai')
+const clientRouter = require('./client')
 
 
-const router = new Router()
+const router = new Router({
+  prefix: '/api',
+})
 
-router.post('/api.ai', require('./api.ai'))
+// router.use('/api.ai', apiAiRouter.routes(), apiAiRouter.allowedMethods())
+router.use('/client', clientRouter.routes(), clientRouter.allowedMethods())
 
 
 module.exports = router
