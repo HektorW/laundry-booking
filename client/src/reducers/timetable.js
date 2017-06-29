@@ -1,6 +1,6 @@
 import {
   FETCH_DAYS_SUCCESS,
-} from 'actions/timeTable'
+} from 'actions/timetable'
 
 
 const initialState = {

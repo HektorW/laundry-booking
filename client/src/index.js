@@ -4,7 +4,7 @@ import createStore from 'store'
 
 let root
 const store = createStore()
-store.dispatch(require('./actions/timeTable').setDebugDays())
+store.dispatch(require('./actions/timetable').setDebugDays())
 
 const init = () => {
   const App = require('./components/App').default

@@ -1,0 +1,13 @@
+.timetable__header-list {
+  border: 1px solid;
+  display: flex;
+}
+
+.timetable__header-list-item {
+  flex: 1;
+  text-align: center;
+}
+
+.timetable__list-item:not(:last-child) {
+  margin: 0 0 1em;
+}

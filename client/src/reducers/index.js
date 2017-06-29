@@ -1,8 +1,8 @@
-import timeTable from './timeTable'
+import timetable from './timetable'
 import user from './user'
 
 
 export default {
-  timeTable,
+  timetable,
   user,
 }
