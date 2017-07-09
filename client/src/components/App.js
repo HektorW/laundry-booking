@@ -1,5 +1,6 @@
 import { h } from 'preact'
 import { Provider } from 'preact-redux'
+import Header from './Header'
 import Timetable from './Timetable'
 import './base.css'
 
@@ -7,7 +8,10 @@ import './base.css'
 const App = ({ store }) =>
   <div className="app">
     <Provider store={store}>
-      <Timetable />
+      <div>
+        <Header />
+        <Timetable />
+      </div>
     </Provider>
   </div>
 

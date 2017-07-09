@@ -1,12 +1,32 @@
-.day__list {
-  display: flex;
-  height: 100px;
+.day--error .day__list {
+  position: relative;
 }
 
-.day--fully-booked .day__list {
-  height: 25px;
+.day--error .day__list::after {
+  background-color: rgba(255, 0, 0, .3);
+  border: 2px solid rgba(255, 0, 0, .6);
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+
+.day__title .week-day-name {
+  font-weight: bold;
+}
+
+.day__title-date {
+  margin-left: .5em;
+}
+
+.day__list {
+  display: flex;
+  justify-content: space-between;
 }
 
 .day__list-item {
-  flex: 1;
+  flex: 0 22%;
 }

@@ -7,7 +7,7 @@
     "node": ">=7.8.0"
   },
   "scripts": {
-    "start": "NODE_ENV=development webpack-dev-server",
+    "start": "NODE_ENV=development webpack-dev-server --host 0.0.0.0",
     "start:dev": "npm run start",
     "build": "NODE_ENV=production webpack",
     "lint:css": "stylelint **/*.css"
@@ -35,6 +35,7 @@
   "dependencies": {
     "preact": "^8.1.0",
     "preact-redux": "^2.0.1",
-    "redux": "^3.7.0"
+    "redux": "^3.7.0",
+    "redux-thunk": "^2.2.0"
   }
 }

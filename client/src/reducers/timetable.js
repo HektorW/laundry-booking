@@ -1,51 +1,38 @@
 import {
+  FETCH_DAYS_REQUEST,
   FETCH_DAYS_SUCCESS,
+  FETCH_DAYS_FAILURE,
 } from 'actions/timetable'
+import {
+  mergeDays,
+  setDaysFetching,
+  setDaysError,
+  parseServerDaysResponse,
+} from './timetable.utils'
 
 
 const initialState = {
   days: [],
+  authSession: null,
+  fetchDaysError: null,
 }
 
 
-const parseServerDay = day => ({
-  ...day,
-  date: day.date instanceof Date
-    ? day.date
-    : new Date(day.dateStr),
-})
-
-
-const mergeDay = (dayState, updatedDay) =>
-  ({ ...dayState, ...updatedDay })
-
-
-const mergeDays = (daysState, newDays) =>
-  newDays
-    .map(parseServerDay)
-    .reduce(
-      (newStateDays, day) => {
-        const dayIndex = newStateDays.findIndex(stateDay => stateDay.dateStr === day.dateStr)
-        if (dayIndex !== -1) {
-          newStateDays[dayIndex] = mergeDay(
-            newStateDays[dayIndex],
-            day
-          )
-        } else {
-          newStateDays.push(day)
-        }
-
-        return newStateDays
-      },
-      [...daysState]
-    )
-    .sort((a, b) => a.date.getTime() - b.date.getTime())
-
-
 const ACTION_HANDLERS = {
-  [FETCH_DAYS_SUCCESS]: (state, { days }) => ({
+  [FETCH_DAYS_REQUEST]: (state, { daysToFetch }) => ({
     ...state,
-    days: mergeDays(state.days, days),
+    fetchDaysError: null,
+    days: mergeDays(state.days, setDaysFetching(daysToFetch)),
+  }),
+  [FETCH_DAYS_SUCCESS]: (state, { fetchedDays, authSession }) => ({
+    ...state,
+    authSession,
+    days: mergeDays(state.days, parseServerDaysResponse(fetchedDays)),
+  }),
+  [FETCH_DAYS_FAILURE]: (state, { failedDays, error }) => ({
+    ...state,
+    fetchDaysError: error,
+    days: mergeDays(state.days, setDaysError(failedDays)),
   }),
 }
 

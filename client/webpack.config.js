@@ -27,6 +27,7 @@ module.exports = {
     proxy: {
       '/api': 'http://localhost:3002',
     },
+    disableHostCheck: true,
   },
 
   module: {

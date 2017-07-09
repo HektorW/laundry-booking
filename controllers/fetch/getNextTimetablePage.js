@@ -2,13 +2,13 @@ const fetchSiteHtml = require('./fetchSiteHtml')
 const getForm = require('./getForm')
 
 
-module.exports = async function getNextTimetablePage (timetableSession, previous = false) {
+module.exports = async function getNextTimetablePage (timetableSession, fetchNext = false) {
   const form = getForm(timetableSession)
 
-  if (previous === true) {
-    form.append('btCalendarPrevious', '<<')
-  } else {
+  if (fetchNext) {
     form.append('btCalendarNext', '>>')
+  } else {
+    form.append('btBook', 'Boka')
   }
 
   const timetablePageHtml = await fetchSiteHtml(form)

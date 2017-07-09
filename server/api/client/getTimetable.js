@@ -1,9 +1,11 @@
 const getNextTimetable = require('../../../controllers/getNextTimetable')
 
 module.exports = async function getTimeTable (ctx) {
-  const { index } = ctx.query
+  const { viewState = null, eventValidation = null } = ctx.query
 
-  const numberIndex = parseInt(index, 10) || 0
+  const authSession = viewState && eventValidation
+    ? { viewState, eventValidation }
+    : null
 
-  ctx.body = await getNextTimetable(numberIndex)
+  ctx.body = await getNextTimetable(authSession)
 }
