@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "start:dev": "NODE_ENV=development nodemon --ignore client/ --inspect=7000 index.js | bunyan -o short"
+    "start:dev": "NODE_ENV=development nodemon --ignore client/src/ --inspect=7000 index.js | bunyan -o short"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.1",
