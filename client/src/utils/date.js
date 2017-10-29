@@ -1,19 +1,10 @@
-export function getUTCMidnightDate (date = new Date()) {
-  const utcMidnightDate = new Date(date.getTime())
-
-  utcMidnightDate.setUTCHours(0)
-  utcMidnightDate.setMinutes(0)
-  utcMidnightDate.setSeconds(0)
-  utcMidnightDate.setMilliseconds(0)
-
-  return utcMidnightDate
-}
+import sharedDateUtils from '../../../shared/utils/date'
 
 
-export const isSameDay = (dateA, dateB) =>
-  getUTCMidnightDate(dateA).getTime() === getUTCMidnightDate(dateB).getTime()
+export const getUTCMidnightDate = sharedDateUtils.getUTCMidnightDate
 
+export const isSameDay = sharedDateUtils.isSameDay
 
-export const DAYS_MS = 1000 * 60 * 60 * 24
-export const nextDay = (date, step = 1) =>
-  new Date(date.getTime() + (DAYS_MS * step))
+export const DAYS_MS = sharedDateUtils.DAYS_MS
+
+export const nextDay = sharedDateUtils.nextDay

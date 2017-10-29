@@ -3,8 +3,8 @@ import SessionStates from '../../constants/SessionStates'
 import './session.css'
 
 
-const getSessionState = session => {
-  switch (session.state) {
+const getStateClassName = state => {
+  switch (state) {
     case SessionStates.Available: return 'session--is-available'
     case SessionStates.Booked: return 'session--is-booked'
     case SessionStates.Booking: return 'session--is-booking'
@@ -15,13 +15,13 @@ const getSessionState = session => {
 }
 
 
-const Session = ({ session }) =>
+const Session = ({ state }) =>
   <button
     className={`
       session
-      ${getSessionState(session)}
+      ${getStateClassName(state)}
     `}
-    disabled={session.state === SessionStates.Booked}
+    disabled={state === SessionStates.Booked}
   >
   </button>
 

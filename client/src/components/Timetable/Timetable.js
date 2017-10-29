@@ -1,11 +1,11 @@
 import { h } from 'preact'
 import { connect } from 'preact-redux'
-import { fetchNextDays } from 'actions/timetable'
-import Day from './Day'
+import { fetchNextWeek } from '../../modules/timetable/timetable.actions'
+import Week from './Week'
 import './timetable.css'
 
 
-const Timetable = ({ days, fetchNextDays }) =>
+const Timetable = ({ weeks, fetchNextWeek }) =>
   <section className="timetable">
     <header className="timetable__header" >
       <ul className="timetable__header-list">
@@ -17,25 +17,31 @@ const Timetable = ({ days, fetchNextDays }) =>
     </header>
 
     <ul className="timetable__list">
-      {days.map(day => 
-        <li key={day.date} className="timetable__list-item">
-          <Day day={day} />
+      {weeks.map(week => 
+      
+        <li key={week.days[0].date} className="timetable__list-item">
+          <Week
+            days={week.days}
+            isFetching={week.isFetching}
+            fetchError={week.fetchError}
+          />
         </li>
+      
       )}
     </ul>
 
-    <button className="timetable__more" onClick={fetchNextDays}>
-      Hämta fler
+    <button className="timetable__more" onClick={fetchNextWeek}>
+      Hämta nästa vecka
     </button>
   </section>
 
 
 const mapStateToProps = ({ timetable }) => ({
-  days: timetable.days,
+  weeks: timetable.weeks,
 })
 
 const mapDispatchToProps = {
-  fetchNextDays,
+  fetchNextWeek,
 }
 
 

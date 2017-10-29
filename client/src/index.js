@@ -4,7 +4,8 @@ import createStore from 'store'
 
 let root
 const store = createStore()
-store.dispatch(require('./actions/timetable').fetchNextDays())
+store.dispatch(require('./modules/timetable/timetable.actions').fetchNextWeek())
+store.dispatch(require('./modules/timetable/timetable.actions').fetchBookedSession())
 
 const init = () => {
   const App = require('./components/App').default

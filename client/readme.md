@@ -32,3 +32,40 @@
 * See next 7 days
 * Book time
 * Cancel time
+
+
+## App state
+```js
+state = {
+  user: {
+    token: String,
+  },
+  timetable: {
+    bookedSession: {
+      date: Date,
+      sessionIndex: Number,
+    },
+    weeks: [{
+      id: Number,
+      authSession: { viewState: '', eventValidation: '' },
+      state: 'fetching|fetching-error|none',
+      error: null,
+      days: [{
+        date: Date,
+        sessions: [{
+          state: 'booked|available|booking|booking-error'
+        }]
+      }]
+    }]
+  }
+}
+```
+
+
+
+
+
+
+## On load
+
+Check 
